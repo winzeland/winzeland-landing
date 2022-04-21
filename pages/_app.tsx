@@ -1,8 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/index.css';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { Layout } from 'components/Layout/Layout';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function YonderApp({ Component, pageProps }: AppProps) {
+  return (
+    <Layout>
+      <Head>
+        <title>Yonder Network</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
-export default MyApp
+export default YonderApp;

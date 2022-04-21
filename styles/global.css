@@ -1,0 +1,14 @@
+@layer base {
+    body {
+        @apply bg-gray-100;
+    }
+    h1 {
+        @apply font-sans uppercase 2xl:text-7xl xl:text-6xl md:text-4xl text-3xl font-black tracking-tight;
+    }
+}
+
+@layer components {
+    .container-full {
+        @apply px-5 lg:px-8;
+    }
+}
