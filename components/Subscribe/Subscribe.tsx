@@ -1,7 +1,10 @@
 import classNames from 'classnames';
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
+
 import { useAnalytics } from 'hooks/useAnalytics';
 import { useIsMounted } from 'hooks/useIsMounted';
-import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
+
+import { SocialLinks } from 'components/SocialLinks/SocialLinks';
 
 export const Subscribe: React.FC = () => {
   const isMounted = useIsMounted();
@@ -67,18 +70,19 @@ export const Subscribe: React.FC = () => {
 
   return (
     <section className="w-full my-8">
-      <div className="w-full max-w-2xl mx-auto p-10 bg-gray-200 rounded-lg">
+      <div className="w-full max-w-xl mx-auto p-10 bg-gray-200 rounded-lg">
         <form onSubmit={handleSubmit}>
-          <h2 className="mb-5 text-md">
-            Subscribe to be whitelisted for early access
-          </h2>
+          <h3 className="mb-5 text-md">
+            Subscribe or join our social networks to be whitelisted for early
+            access
+          </h3>
           <div className="flex flex-col space-y-2">
             <label className="font-light">Email address:</label>
             <input
               type="email"
               value={email}
               onChange={handleChange}
-              placeholder="welcome@yonder.network"
+              placeholder="welcome@winzeland.com"
               className="p-3 rounded-lg font-light"
               onBlur={() =>
                 logEvent('input_blur', { event_category: 'Subscription' })
@@ -95,18 +99,19 @@ export const Subscribe: React.FC = () => {
               </div>
             )}
           </div>
-          <div className="mt-5 text-center">
+          <div className="mt-5 flex flex-col items-center gap-4 md:flex-row-reverse md:justify-between">
             <button
               type="submit"
               disabled={loading || !email.length}
               className={classNames(
-                'rounded-lg p-3 bg-red-400 cursor-pointer text-white',
+                'w-48 rounded-lg p-3 bg-green-900 cursor-pointer text-white duration-300 hover:bg-opacity-75',
                 !email.length && 'cursor-not-allowed opacity-25',
                 loading && 'cursor-loading opacity-25',
               )}
             >
               Subscribe
             </button>
+            <SocialLinks />
           </div>
         </form>
       </div>

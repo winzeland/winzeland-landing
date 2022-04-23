@@ -1,40 +1,77 @@
 import type { NextPage } from 'next';
+import Img from 'next/image';
 import { Content } from 'components/Content/Content';
 import { Subscribe } from 'components/Subscribe/Subscribe';
-import Link from 'next/link';
+import { Banner } from 'components/Banner/Banner';
+import imgWanderer from 'assets/icons/worker.png';
+import imgLand from 'assets/icons/landscape.png';
+import imgResources from 'assets/icons/potion.png';
 
 const HomePage: NextPage = () => {
   return (
-    <Content className="h-full flex-1" contentClassName="flex-1 h-full">
-      <div className="container flex flex-col items-center justify-center">
-        <h1>Yonder Network</h1>
+    <Content
+      className="h-full flex-1"
+      contentClassName="flex-1 h-full pt-0"
+      headerClassName="pt-12 py-12 md:pt-24 md:py-24 bg-green-700"
+      header={<Banner />}
+    >
+      <section className="py-12 md:py-24 bg-green-900 container-full text-white">
+        <div className="mx-auto w-full max-w-lg text-center">
+          <h2 className="mb-3">What is Winzeland?</h2>
+          <p className="text-lg">
+            Winzeland combines roleplaying, afk game styles and blockchain to
+            create unique NFT powered game world on Polygon network. Characters,
+            lands and all of Winzeland resources are NFTs that players will be
+            able to gather and trade between friends.
+          </p>
+        </div>
+      </section>
 
-        <p className="mt-10 text-center">
-          In the world of blockchain-based games, non-fungible tokens (NFTs) are
-          all the rage. And for good reason: they provide a way to create
-          unique, digital assets that can be collected, traded, and used in
-          gameplay.
-        </p>
-        <p className="mt-5 text-center">
-          Now, a new game called Yonder will be shaking up the scene by making
-          NFTs an essential part of the gameplay experience. In Yonder, players
-          collect resources such as wood, stone, and metal in order to build
-          structures and upgrade their base camp. These resources are
-          represented by NFTs, which can be stored in the player's inventory and
-          used at any time. What's more, the game also features a robust market
-          system where players can buy and sell resources with one another.
-        </p>
+      <section className="py-12 md:py-24 bg-green-700 text-white px-6 lg:px-32">
+        <div className="w-full w-3/4 mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 lg:gap-10">
+            <div className="w-full md:flex-1">
+              <h2 className="mb-3">Wanderers</h2>
+              <p className="mb-1">
+                Wanderers are unique characters who work for the player.
+              </p>
+              <p>
+                Player must assign wanderer to collect stone, smelt iron, make
+                weapons and potions.
+              </p>
+            </div>
+            <div className="mt-3 w-56 h-56 relative">
+              <Img src={imgWanderer} layout="fill" />
+            </div>
+          </div>
 
-        <p className="mt-5">
-          Read our{' '}
-          <Link href="/vision">
-            <a className="underline">Vision</a>
-          </Link>{' '}
-          for more.
-        </p>
+          <div className="flex flex-col justify-between items-center mb-8 gap-4 lg:gap-10 md:flex-row-reverse">
+            <div className="w-full md:flex-1">
+              <h2 className="mb-3">Lands</h2>
+              <p className="mb-1">
+                Winzeland is split to 10 000 pieces. Each land will offer
+                fortunes and hardships for it's owner.
+              </p>
+            </div>
+            <div className="mt-3 w-56 h-56 relative">
+              <Img src={imgLand} layout="fill" />
+            </div>
+          </div>
 
-        <Subscribe />
-      </div>
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 lg:gap-10">
+            <div className="w-full md:flex-1">
+              <h2 className="mb-3">Resources</h2>
+              <p className="mb-1">
+                Winzeland will let you to gather resources from lands and then
+                trade or combine them to create various items and buildings.
+              </p>
+            </div>
+            <div className="mt-3 w-56 h-56 relative">
+              <Img src={imgResources} layout="fill" />
+            </div>
+          </div>
+        </div>
+      </section>
     </Content>
   );
 };

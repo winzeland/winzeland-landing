@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { PropsWithChildren, useMemo } from 'react';
+import { hasClassPrefix } from 'utils/helpers';
 
 type ContentProps = {
   header?: React.ReactNode;
@@ -18,7 +19,13 @@ export const Content: React.FC<PropsWithChildren<ContentProps>> = ({
   const maybeRenderHeader = useMemo(() => {
     if (header) {
       return (
-        <header className={classNames('pt-32 z-30', headerClassName)}>
+        <header
+          className={classNames(
+            'z-30',
+            !hasClassPrefix('pt-', headerClassName) && 'pt-32',
+            headerClassName,
+          )}
+        >
           {header}
         </header>
       );
@@ -27,10 +34,20 @@ export const Content: React.FC<PropsWithChildren<ContentProps>> = ({
   }, [header, headerClassName]);
 
   return (
-    <main className={classNames(className, !maybeRenderHeader && 'pt-32')}>
+    <main
+      className={classNames(
+        !maybeRenderHeader && !hasClassPrefix('pt-', className) && 'pt-32',
+        className,
+      )}
+    >
       {maybeRenderHeader}
       <div
-        className={classNames(contentClassName, !!maybeRenderHeader && 'pt-8')}
+        className={classNames(
+          !!maybeRenderHeader &&
+            !hasClassPrefix('pt-', contentClassName) &&
+            'pt-8',
+          contentClassName,
+        )}
       >
         {children}
       </div>
