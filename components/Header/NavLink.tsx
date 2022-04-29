@@ -1,15 +1,21 @@
 import classNames from 'classnames';
+import { useAnalytics } from 'hooks/useAnalytics';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useMemo } from 'react';
-import { UrlObject } from 'url';
+import React, { HTMLAttributeAnchorTarget, useCallback, useMemo } from 'react';
 import styles from './NavLink.module.css';
 
 export type NavLinkProps = {
   title: React.ReactNode;
+  target?: HTMLAttributeAnchorTarget;
 } & LinkProps;
 
-export const NavLink: React.FC<NavLinkProps> = ({ title, ...props }) => {
+export const NavLink: React.FC<NavLinkProps> = ({
+  title,
+  target,
+  ...props
+}) => {
+  const { logEvent } = useAnalytics();
   const { asPath } = useRouter();
 
   const isActive = useMemo(() => {
@@ -17,9 +23,30 @@ export const NavLink: React.FC<NavLinkProps> = ({ title, ...props }) => {
     return linkPathname === asPath;
   }, [asPath, props.as, props.href]);
 
+  const rel = useMemo(() => {
+    if (target === '_blank') {
+      return 'noopener noreferrer';
+    }
+    return undefined;
+  }, [target]);
+
+  const handleClick = useCallback(
+    () =>
+      logEvent('click', {
+        event_category: 'nav_link',
+        event_label: props.href.toString(),
+      }),
+    [logEvent, props.href],
+  );
+
   return (
     <Link {...props}>
-      <a className={classNames(styles.link, isActive && styles.active)}>
+      <a
+        className={classNames(styles.link, isActive && styles.active)}
+        target={target}
+        rel={rel}
+        onClick={handleClick}
+      >
         {title}
       </a>
     </Link>
