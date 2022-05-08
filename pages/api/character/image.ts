@@ -1,4 +1,4 @@
-import { getWinzer, randomizeWinzerTraits } from '@winzeland/generator';
+import { getWinzer, randomizeWinzerTraits } from '@winzeland/winzer/dist';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = string;

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.75",
-    "@winzeland/generator": "^0.0.2",
+    "@winzeland/winzer": "^0.0.1-aplha.2",
     "classnames": "^2.3.1",
     "next": "12.1.5",
     "postcss-import": "^14.1.0",

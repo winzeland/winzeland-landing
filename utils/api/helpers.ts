@@ -1,47 +1,74 @@
-export const buildOpenSeaMetadata = (id: number) => {
+import {
+  TraitType,
+  randomizeWinzerTraits,
+  winzerTraitLabelList,
+} from '@winzeland/winzer/dist';
+
+export const buildOpenSeaMetadata = (id: number, url: string) => {
+  const traits = randomizeWinzerTraits();
+
+  const getTrait = (type: TraitType) =>
+    winzerTraitLabelList[type][traits[type]] || '[Unknown]';
+
   return {
-    name: `Yonderer #${id}`,
-    image: `${process.env.IMAGE_URL}/meta/character/${id}.svg`,
-    description: `Yonderer #${id} is a citizen of Yonder Kindgom.`,
+    name: `Winzer #${id}`,
+    image: `${url}/meta/character/${id}.svg`,
+    description: `Winzer #${id} is a citizen of Winzeland Kingdom.`,
     background_color: 'FD7701',
     attributes: [
       {
         trait_type: 'Race',
-        value: 'Human',
+        value: getTrait('race'),
       },
       {
         trait_type: 'Sex',
-        value: 'Male',
+        value: getTrait('sex'),
       },
-      {
-        trait_type: 'Hair',
-        value: 'Short Brown',
-      },
-      //   {
-      //     trait_type: 'Beard',
-      //     value: 'None',
-      //   },
       {
         trait_type: 'Skin',
-        value: 'White',
+        value: getTrait('skinTone'),
       },
       {
-        trait_type: 'Face',
-        value: 'Eye scar',
+        trait_type: 'Ears',
+        value: getTrait('ears'),
       },
       {
         trait_type: 'Eyes',
-        value: 'Sparkly',
+        value: getTrait('eyes'),
+      },
+      {
+        trait_type: 'Eyebrows',
+        value: getTrait('eyebrows'),
       },
       {
         trait_type: 'Mouth',
-        value: 'Smiling',
+        value: getTrait('mouth'),
       },
-      //   {
-      //     trait_type: 'Specialty', // skill
-      //     value: 'Woodcutter',
-      //   },
+      {
+        trait_type: 'Nose',
+        value: getTrait('nose'),
+      },
+      {
+        trait_type: 'Hair',
+        value: getTrait('hair'),
+      },
+      {
+        trait_type: 'Beard',
+        value: getTrait('beard'),
+      },
+      {
+        trait_type: 'Scars',
+        value: getTrait('scars'),
+      },
+      {
+        trait_type: 'Accessories',
+        value: getTrait('accessories'),
+      },
+      {
+        trait_type: 'Makeup',
+        value: getTrait('makeup'),
+      },
     ],
-    external_url: `${process.env.IMAGE_URL}/character/${id}`,
+    external_url: `${url}/character/${id}`,
   };
 };

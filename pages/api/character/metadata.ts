@@ -10,7 +10,7 @@ export default function handler(
   res.setHeader('Cache-Control', 's-maxage=86400');
 
   const id = Number(req.query.id) || 0;
-  const token = buildOpenSeaMetadata(id);
+  const token = buildOpenSeaMetadata(id, `http://${req.headers.host}`);
 
   if (!token) {
     res.status(404);

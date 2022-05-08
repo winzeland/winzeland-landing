@@ -1,5 +1,5 @@
 // see https://github.com/martpie/next-transpile-modules#readme
-const withTM = require('next-transpile-modules')(['@winzeland/generator']);
+const withTM = require('next-transpile-modules')(['@winzeland/winzer']);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withTM({
