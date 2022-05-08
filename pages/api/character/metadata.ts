@@ -58,7 +58,7 @@ export default async function handler(
     eyebrows: dna.eyebrows,
     nose: dna.nose,
     scars: dna.scars,
-    accessories: extraDna.accessories,
+    accessories: extraDna.accessory,
     makeup: extraDna.makeup,
   };
 
