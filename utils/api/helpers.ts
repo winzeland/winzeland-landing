@@ -2,13 +2,17 @@ import {
   TraitType,
   randomizeWinzerTraits,
   winzerTraitLabelList,
+  WinzerProps,
 } from '@winzeland/winzer/dist';
 
-export const buildOpenSeaMetadata = (id: number, url: string) => {
-  const traits = randomizeWinzerTraits();
-
+export const buildOpenSeaMetadata = (
+  id: number,
+  props: WinzerProps,
+  skills: Record<string, number>,
+  url: string,
+) => {
   const getTrait = (type: TraitType) =>
-    winzerTraitLabelList[type][traits[type]] || '[Unknown]';
+    winzerTraitLabelList[type][props[type]] || '[Unknown]';
 
   return {
     name: `Winzer #${id}`,
