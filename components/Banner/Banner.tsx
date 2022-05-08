@@ -19,7 +19,7 @@ export const Banner: FC = () => {
   return (
     <section className="container-full text-white">
       <div className="w-52 h-52 relative mx-auto">
-        <Img src={knightImg} layout="fill" />
+        <Img src={knightImg} layout="fill" priority />
       </div>
       <h1 className="text-center mt-4">WINZELAND</h1>
       <div className="mt-4 max-w-md mx-auto">
