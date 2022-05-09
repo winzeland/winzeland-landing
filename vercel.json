@@ -1,7 +1,9 @@
 {
   "rewrites": [
     { "source": "/meta/character/:id.svg", "destination": "/api/character/image" },
-    { "source": "/meta/character/:id", "destination": "/api/character/metadata" }
+    { "source": "/meta/character/:id", "destination": "/api/character/metadata" },
+    { "source": "/meta/contract/:id", "destination": "/api/contract/metadata" },
+    { "source": "/meta/contract/:id.svg", "destination": "/api/contract/image" }
   ],
   "headers": [
     {
