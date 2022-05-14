@@ -1,58 +1,91 @@
-export const buildOpenSeaMetadata = (id: number) => {
+import {
+  TraitType,
+  winzerTraitLabelList,
+  WinzerProps,
+} from '@winzeland/winzer';
+
+const getName = (id: number) => {
+  if (id === 0) {
+    return 'Dagda';
+  }
+  return `Winzer #${id}`;
+};
+
+const getDescription = (id: number) => {
+  if (id === 0) {
+    return 'It is said that the Dagda was the first Winzer to ever set foot in the Winzeland. He was a plain man, without any special skills or talents. However, it is also said that all Winzers are descendants of the Dagda. Whether or not this is true, it is clear that the Dagda was an important figure in the history of the Winzeland. It is because of him that the Winzeland exists today, and his legacy continues to influence the Winzers who live there. Without the Dagda, there would be no Winzeland, and no Winzers.';
+  }
+  return `Winzer #${id} is a hardworking citizen of Winzeland.`;
+};
+
+export const buildOpenSeaMetadata = (
+  id: number,
+  props: WinzerProps,
+  skills: Record<string, number>,
+  url: string,
+) => {
+  const getTrait = (type: TraitType) =>
+    winzerTraitLabelList[type][props[type]] || '[Unknown]';
+
   return {
-    name: `Yonderer #${id}`,
-    image: `${process.env.IMAGE_URL}/meta/character/${id}.svg`,
-    description: `Yonderer #${id} is a citizen of Yonder Kindgom.`,
+    name: getName(id),
+    image: `${url}/meta/winzer/${id}.svg`,
+    description: getDescription(id),
     background_color: 'FD7701',
     attributes: [
       {
         trait_type: 'Race',
-        value: 'Human',
+        value: getTrait('race'),
       },
       {
         trait_type: 'Sex',
-        value: 'Male',
+        value: getTrait('sex'),
       },
-      {
-        trait_type: 'Hair',
-        value: 'Short Brown',
-      },
-      //   {
-      //     trait_type: 'Beard',
-      //     value: 'None',
-      //   },
       {
         trait_type: 'Skin',
-        value: 'White',
+        value: getTrait('skinTone'),
       },
       {
-        trait_type: 'Face',
-        value: 'Eye scar',
+        trait_type: 'Ears',
+        value: getTrait('ears'),
       },
       {
         trait_type: 'Eyes',
-        value: 'Sparkly',
+        value: getTrait('eyes'),
+      },
+      {
+        trait_type: 'Eyebrows',
+        value: getTrait('eyebrows'),
       },
       {
         trait_type: 'Mouth',
-        value: 'Smiling',
+        value: getTrait('mouth'),
       },
-      //   {
-      //     trait_type: 'Specialty', // skill
-      //     value: 'Woodcutter',
-      //   },
+      {
+        trait_type: 'Nose',
+        value: getTrait('nose'),
+      },
+      {
+        trait_type: 'Hair',
+        value: getTrait('hair'),
+      },
+      {
+        trait_type: 'Beard',
+        value: getTrait('beard'),
+      },
+      {
+        trait_type: 'Scars',
+        value: getTrait('scars'),
+      },
+      {
+        trait_type: 'Accessories',
+        value: getTrait('accessories'),
+      },
+      {
+        trait_type: 'Makeup',
+        value: getTrait('makeup'),
+      },
     ],
-    external_url: `${process.env.IMAGE_URL}/character/${id}`,
+    external_url: `${url}/winzer/${id}`,
   };
-};
-
-export const buildSvgImage = (id: number) => {
-  return `
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350">
-      <style>.base { fill: white; font-family: helvetica-w01-roman,helvetica-w02-roman,helvetica-lt-w10-roman,sans-serif; font-size: 17px; }</style>
-      <rect width="100%" height="100%" fill="#FD7701" />
-      <text x="10" y="40" class="base">#Yonderer ${id}</text>
-      <text x="10" y="70" class="base">#test yonder</text>
-    </svg>
-`;
 };

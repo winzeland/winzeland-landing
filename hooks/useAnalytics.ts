@@ -16,7 +16,8 @@ export const useAnalytics = () => {
   );
 
   const logEvent = useCallback(
-    (action: string, options: GtagOptions) => sendGtag('event', action, options),
+    (action: string, options: GtagOptions) =>
+      sendGtag('event', action, options),
     [sendGtag],
   );
 

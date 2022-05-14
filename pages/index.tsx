@@ -31,12 +31,13 @@ const HomePage: NextPage = () => {
         <div className="w-full w-3/4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 lg:gap-10">
             <div className="w-full md:flex-1">
-              <h2 className="mb-3">Wanderers</h2>
+              <h2 className="mb-3">Winzers</h2>
               <p className="mb-1">
-                Wanderers are unique characters who work for the player.
+                Winzers are citizens of Winzeland. They are unique characters
+                who work for the player.
               </p>
               <p>
-                Player must assign wanderer to collect stone, smelt iron, make
+                Player must assign winzer to collect stone, smelt iron, make
                 weapons and potions.
               </p>
             </div>

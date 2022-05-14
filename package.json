@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.75",
+    "@winzeland/winzer": "^0.2.0",
     "classnames": "^2.3.1",
     "next": "12.1.5",
     "postcss-import": "^14.1.0",
@@ -26,6 +27,7 @@
     "eslint-config-next": "12.1.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "next-transpile-modules": "9.0.0",
     "postcss-preset-env": "^7.4.3",
     "prettier": "^2.6.2",
     "sass": "^1.50.0",
