@@ -8,12 +8,18 @@ const getName = (id: number) => {
   if (id === 0) {
     return 'Dagda';
   }
+  if (id === 1) {
+    return 'Danu';
+  }
   return `Winzer #${id}`;
 };
 
 const getDescription = (id: number) => {
   if (id === 0) {
     return 'It is said that the Dagda was the first Winzer to ever set foot in the Winzeland. He was a plain man, without any special skills or talents. However, it is also said that all Winzers are descendants of the Dagda. Whether or not this is true, it is clear that the Dagda was an important figure in the history of the Winzeland. It is because of him that the Winzeland exists today, and his legacy continues to influence the Winzers who live there. Without the Dagda, there would be no Winzeland, and no Winzers.';
+  }
+  if (id === 1) {
+    return 'Danu is the beautiful wife of Dagda, and the ancestors of all Winzers. It is said that after Dagda discovered the land of Winzeland, he took Danu there to live. She is said to have been a great help to him in establishing the new settlement, and she is also credited with having a special connection to the land.';
   }
   return `Winzer #${id} is a hardworking citizen of Winzeland.`;
 };
