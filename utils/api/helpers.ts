@@ -1,9 +1,22 @@
 import {
   TraitType,
-  randomizeWinzerTraits,
   winzerTraitLabelList,
   WinzerProps,
-} from '@winzeland/winzer/dist';
+} from '@winzeland/winzer';
+
+const getName = (id: number) => {
+  if (id === 0) {
+    return 'Dagda';
+  }
+  return `Winzer #${id}`;
+};
+
+const getDescription = (id: number) => {
+  if (id === 0) {
+    return 'It is said that the Dagda was the first Winzer to ever set foot in the Winzeland. He was a plain man, without any special skills or talents. However, it is also said that all Winzers are descendants of the Dagda. Whether or not this is true, it is clear that the Dagda was an important figure in the history of the Winzeland. It is because of him that the Winzeland exists today, and his legacy continues to influence the Winzers who live there. Without the Dagda, there would be no Winzeland, and no Winzers.';
+  }
+  return `Winzer #${id} is a hardworking citizen of Winzeland.`;
+};
 
 export const buildOpenSeaMetadata = (
   id: number,
@@ -15,9 +28,9 @@ export const buildOpenSeaMetadata = (
     winzerTraitLabelList[type][props[type]] || '[Unknown]';
 
   return {
-    name: `Winzer #${id}`,
-    image: `${url}/meta/character/${id}.svg`,
-    description: `Winzer #${id} is a citizen of Winzeland Kingdom.`,
+    name: getName(id),
+    image: `${url}/meta/winzer/${id}.svg`,
+    description: getDescription(id),
     background_color: 'FD7701',
     attributes: [
       {
@@ -73,6 +86,6 @@ export const buildOpenSeaMetadata = (
         value: getTrait('makeup'),
       },
     ],
-    external_url: `${url}/character/${id}`,
+    external_url: `${url}/winzer/${id}`,
   };
 };

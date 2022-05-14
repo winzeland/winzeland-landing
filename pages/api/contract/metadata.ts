@@ -5,11 +5,12 @@ type Data = { [key: string]: any };
 const items: Record<string, object> = {
   winzers: {
     name: 'Winzeland: Winzer',
-    description: 'Winzers are citizens of Winzeland.',
+    description:
+      'The Winzers are a hardworking and industrious people. They have worked the lands for generations, gathering the resources they need to survive. They are also skilled craftsmen, able to create a wide variety of items from the materials they have gathered.',
     image: 'https://www.winzeland.com/meta/contract/winzers.svg',
     external_link: 'https://www.winzeland.com',
     seller_fee_basis_points: 500,
-    fee_recipient: '0x497971B6535A9f7a5D7ef8e5a6F47bb309A0C3Ea',
+    fee_recipient: '0xCA77C29EeF243e195109c9bD1272F62905E25cbE',
   },
   lands: {
     name: 'Winzeland: Lands',
@@ -18,7 +19,7 @@ const items: Record<string, object> = {
     image: 'https://www.winzeland.com/meta/contract/lands.svg',
     external_link: 'https://www.winzeland.com',
     seller_fee_basis_points: 500,
-    fee_recipient: '0x497971B6535A9f7a5D7ef8e5a6F47bb309A0C3Ea',
+    fee_recipient: '0xCA77C29EeF243e195109c9bD1272F62905E25cbE',
   },
   resources: {
     name: 'Winzeland: Resources',
@@ -26,7 +27,7 @@ const items: Record<string, object> = {
     image: 'https://www.winzeland.com/meta/contract/resources.svg',
     external_link: 'https://www.winzeland.com',
     seller_fee_basis_points: 500,
-    fee_recipient: '0x497971B6535A9f7a5D7ef8e5a6F47bb309A0C3Ea',
+    fee_recipient: '0xCA77C29EeF243e195109c9bD1272F62905E25cbE',
   },
 };
 
