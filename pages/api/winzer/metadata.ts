@@ -1,8 +1,9 @@
+import { WinzerProps } from '@winzeland/winzer';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getWinzer, WinzerProps } from '@winzeland/winzer/dist';
 import { fetchGraphQL } from 'utils/api/graphql';
+import { buildOpenSeaMetadata } from 'utils/api/helpers';
 
-type Data = string;
+type Data = { [key: string]: any };
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +13,7 @@ export default async function handler(
 
   const id = (Number(req.query.id) || 0).toString(16);
 
-  const { data } = await fetchGraphQL<{ winzerToken: Record<string, any> }>(`
+  const response = await fetchGraphQL<{ winzerToken: Record<string, any> }>(`
     {
       winzerToken(id: "0x${id}") {
         dna {
@@ -28,21 +29,19 @@ export default async function handler(
           eyebrows
           nose
           scars
-        }
-        extraDna {
           accessory
           makeup
-          skill1
-          skill2
-          skill3
-          skill4
-          skill5
         }
       }
     }
   `);
 
-  const { dna, extraDna } = data.winzerToken;
+  if (!response.data) {
+    res.status(404);
+    return res.send('Not found' as any);
+  }
+
+  const { dna } = response.data.winzerToken;
 
   const props: WinzerProps = {
     race: dna.race,
@@ -57,17 +56,16 @@ export default async function handler(
     eyebrows: dna.eyebrows,
     nose: dna.nose,
     scars: dna.scars,
-    accessories: extraDna.accessory,
-    makeup: extraDna.makeup,
+    accessories: dna.accessory,
+    makeup: dna.makeup,
   };
 
-  const token = getWinzer(props);
+  const token = buildOpenSeaMetadata(
+    parseInt(id, 16),
+    props,
+    {}, // skills
+    `http://${req.headers.host}`,
+  );
 
-  if (!token) {
-    res.status(404);
-    return res.send('Not found');
-  }
-
-  res.setHeader('Content-Type', 'image/svg+xml');
-  res.status(200).send(token);
+  res.status(200).json(token);
 }
