@@ -4,6 +4,16 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="crossorigin"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Stick&display=swap"
+          rel="stylesheet"
+        />
         {process.env.NEXT_PUBLIC_GTAG_ID && (
           <>
             <script

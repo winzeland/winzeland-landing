@@ -13,7 +13,7 @@ const Custom404: NextPage = () => {
         </div>
       }
     >
-      <div className="container">Page can not be found.</div>
+      <div className="container pb-24">Page can not be found.</div>
     </Content>
   );
 };

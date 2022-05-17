@@ -1,6 +1,6 @@
 .link {
     @apply bg-opacity-20 text-black opacity-80
-     items-center relative h-7 items-center font-mono
+     items-center relative h-7 items-center font-display
      tracking-wider duration-1000
      uppercase bg-white px-8
      duration-200 items-center px-4 hover:bg-opacity-70

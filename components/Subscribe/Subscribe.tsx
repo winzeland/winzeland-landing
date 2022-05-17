@@ -4,8 +4,6 @@ import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import { useAnalytics } from 'hooks/useAnalytics';
 import { useIsMounted } from 'hooks/useIsMounted';
 
-import { SocialLinks } from 'components/SocialLinks/SocialLinks';
-
 export const Subscribe: React.FC = () => {
   const isMounted = useIsMounted();
   const { logEvent } = useAnalytics();
@@ -111,7 +109,6 @@ export const Subscribe: React.FC = () => {
             >
               Subscribe
             </button>
-            <SocialLinks />
           </div>
         </form>
       </div>

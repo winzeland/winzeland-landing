@@ -8,11 +8,13 @@ import styles from './NavLink.module.css';
 export type NavLinkProps = {
   title: React.ReactNode;
   target?: HTMLAttributeAnchorTarget;
+  className?: string;
 } & LinkProps;
 
 export const NavLink: React.FC<NavLinkProps> = ({
   title,
   target,
+  className,
   ...props
 }) => {
   const { logEvent } = useAnalytics();
@@ -42,7 +44,11 @@ export const NavLink: React.FC<NavLinkProps> = ({
   return (
     <Link {...props}>
       <a
-        className={classNames(styles.link, isActive && styles.active)}
+        className={classNames(
+          styles.link,
+          className,
+          isActive && styles.active,
+        )}
         target={target}
         rel={rel}
         onClick={handleClick}
