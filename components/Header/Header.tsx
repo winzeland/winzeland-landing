@@ -33,6 +33,24 @@ export const Header = () => {
                 target="_blank"
               />
             </li>
+            <li>
+              <NavLink
+                href="https://opensea.io/collection/winzeland-winzer"
+                title={
+                  <>
+                    OpenSea&nbsp;
+                    <Image
+                      src={OpenWindowIcon}
+                      alt="Open Sea"
+                      width={14}
+                      height={14}
+                      priority
+                    />
+                  </>
+                }
+                target="_blank"
+              />
+            </li>
           </ul>
         </div>
       </div>

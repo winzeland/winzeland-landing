@@ -18,4 +18,12 @@
     h2 {
         @apply 2xl:text-5xl xl:text-4xl md:text-3xl text-2xl font-bold tracking-wide;
     }
+
+    h3 {
+        @apply 2xl:text-4xl xl:text-3xl md:text-2xl text-xl font-bold tracking-wide;
+    }
+
+    p {
+        @apply mb-1;
+    }
 }

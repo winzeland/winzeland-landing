@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import Img from 'next/image';
 import { Content } from 'components/Content/Content';
 import { Banner } from 'components/Banner/Banner';
-import imgWanderer from 'assets/icons/worker.png';
-import imgLand from 'assets/icons/landscape.png';
-import imgResources from 'assets/icons/potion.png';
+import imgWorker from 'assets/images/worker.png';
+import imgLand from 'assets/images/land.png';
+import imgResources from 'assets/images/resources.png';
 import knightImg from 'assets/winzers/generated-nfts.gif';
 
 const HomePage: NextPage = () => {
@@ -41,8 +41,8 @@ const HomePage: NextPage = () => {
                 weapons and potions.
               </p>
             </div>
-            <div className="mt-3 w-56 h-56 relative">
-              <Img src={imgWanderer} layout="fill" />
+            <div className="mt-3 w-56 relative">
+              <Img src={imgWorker} layout="responsive" />
             </div>
           </div>
 
@@ -58,8 +58,8 @@ const HomePage: NextPage = () => {
                 owner.
               </p>
             </div>
-            <div className="mt-3 w-56 h-56 relative">
-              <Img src={imgLand} layout="fill" />
+            <div className="mt-3 w-56 relative">
+              <Img src={imgLand} layout="responsive" />
             </div>
           </div>
 

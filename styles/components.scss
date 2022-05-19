@@ -2,4 +2,8 @@
     .container-full {
         @apply px-5 lg:px-8;
     }
+
+    .ul {
+        @apply list-disc ml-4 my-2;
+    }
 }
