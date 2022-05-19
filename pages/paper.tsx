@@ -126,7 +126,7 @@ const HomePage: NextPage = () => {
           Land owners will have a chance to rent their land for other players.
         </p>
         <p>
-          It's planned to offer 10 000 lands for the players. If the event of
+          It's planned to offer 10 000 lands for the players. In the event of
           land amount not being sufficient because of the large count of the
           players, Winzer DAO could vote for finding more lands in a new
           continent.
@@ -173,6 +173,114 @@ const HomePage: NextPage = () => {
           There is virtually unlimited possibilites of how resources could be
           used.
         </p>
+      </Block>
+
+      <Block title="Trading in Winzeland and Gubbins">
+        <p>
+          Players will have ability to trade with each other in both internal
+          marketplace and NFT trading platforms such as OpenSea.
+        </p>
+        <p>
+          Trade would happen by one player submitting sell order of how much of
+          one resource they want to change to another resource.
+        </p>
+        <blockquote>
+          Player A wants to trade 15 <em>planks</em> to 10 <em>bricks</em>.
+        </blockquote>
+        <blockquote>
+          Player B wants to trade 10 <em>bricks</em> to 3 <em>iron bars</em>.
+        </blockquote>
+        <h3 className="mt-5 mb-3">Gubbins Token</h3>
+        <p>
+          Of course trading one resource to another over and over until you get
+          what you actually want may take some time, that's why we are
+          introducing <strong>Gubbins</strong> - currency, which will be used in
+          the Winzeland.
+        </p>
+        <blockquote>
+          Player A wants to trade 15 <em>planks</em> to 150 <em>gubbins</em>.
+        </blockquote>
+        <blockquote>
+          Player B wants to trade 10 <em>bricks</em> to 300 <em>gubbins</em>.
+        </blockquote>
+        <p>
+          <strong>Gubbins</strong> token could be used when trading with other
+          players, renting lands, paying for services and so on.
+        </p>
+        <p>
+          There is no plan to make an ICO or any similar sale of{' '}
+          <strong>Gubbins</strong> token. Tokens will be minted in the game
+          itself by burning <em>Gold Bars</em> that players gather from the
+          lands. Players could also burn tokens back to the <em>Gold Bars</em>.
+          Of course both minting and burning will take some of{' '}
+          <strong>Gubbins</strong> as a fee.
+        </p>
+      </Block>
+
+      <Block title="Building Settlement">
+        <p>
+          As mentioned before, players can build constructions in the lands
+          (considering land have suitable place).
+        </p>
+        <p>
+          Constructions would be built out of resources and put on the land.
+          There could be different types of constructions: defensive buildings,
+          workshops or infrastructure.
+        </p>
+        <h3 className="mt-5 mb-3">Defensive Buildings</h3>
+        <p>
+          As name suggests defensive buildings would increase settlement defence
+          making it harder for enemies to attack it.
+        </p>
+        <h3 className="mt-5 mb-3">Workshops</h3>
+        <p>
+          Workshops would be buildings where players would assign (stake) their
+          winzers, add one kind of resource and workshop would make another kind
+          of a resource back after some time: Put 2 <em>wood logs</em> to the{' '}
+          <em>sawmill</em> and receive 1 <em>wood plan</em> after 30 minutes.
+        </p>
+        <h3 className="mt-5 mb-3">Infrastructure Buildings</h3>
+        <p>
+          Settlement infrastructure would add some bonuses for settlements. For
+          example we could have winzer (lets call him Picker) assigned to move
+          resources from one workshop to another so player would not be required
+          to add resources to the workshop manually.
+        </p>
+        <p>
+          For example, if player has two buildings <em>Woodcutter's Hut</em>{' '}
+          which allows Winzer to chopdown forest for the <em>wood logs</em> and
+          a <em>Sawmill</em> which would allow Winzer to make{' '}
+          <em>wood planks</em> out of the <em>wood logs</em>.
+        </p>
+        <p>
+          Without a <em>Picker</em>, player would have to take{' '}
+          <em>wood logs</em> from <em>Woodcutter's Hut</em> and place it to the{' '}
+          <em>Sawmill</em> so it would make <em>wood planks</em> manually. But{' '}
+          <em>Picker</em> could do this for the player, automating process.
+        </p>
+      </Block>
+      <Block title="Governance with DAO">
+        <p>
+          Winzeland will be governed by the DAO (Decentralized Autonomous
+          Organization). That means that players will have a power to propose
+          and vote for the game rule changes.
+        </p>
+        <p>Rules that could be changed includes but are not limited to:</p>
+        <ul className="ul">
+          <li>Minting more Winzers;</li>
+          <li>
+            Preventing Winzers to have children or increasing rates of having
+            them;
+          </li>
+          <li>Minting new lands or continents;</li>
+          <li>Registering new winzer traits or skills;</li>
+          <li>
+            Registering new game resources: weapons, buildins, potions and etc;
+          </li>
+          <li>Changing how marketplace works;</li>
+          <li>Changing battle systems;</li>
+          <li>Adding new features and many more..</li>
+        </ul>
       </Block>
     </Content>
   );

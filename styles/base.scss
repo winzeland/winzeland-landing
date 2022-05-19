@@ -26,4 +26,11 @@
     p {
         @apply mb-1;
     }
+
+    blockquote {
+        @apply my-2 p-2 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 bg-gray-200 rounded-lg;
+        & em {
+            @apply text-black;
+        }
+    }
 }
