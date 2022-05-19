@@ -296,10 +296,10 @@
     "@typescript-eslint/types" "5.10.1"
     eslint-visitor-keys "^3.0.0"
 
-"@winzeland/winzer@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@winzeland/winzer/-/winzer-0.2.0.tgz#958726cdd713d041015a0383857c03bd644e8e2f"
-  integrity sha512-jZ4KlcSUJ3EXbYtexf3R/37iS9EKPWmpFPVlo8Ab6MbWM3u6ucKUSnpseJXmPrHbYQpCoC0XXP43OnTDSBK1Rw==
+"@winzeland/winzer@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@winzeland/winzer/-/winzer-0.2.1.tgz#e7aa1063fbfb66cd69d439baa0270c2c493d2c44"
+  integrity sha512-RZldGO5NL5CMKRgIG68QnC085XxEA57nbfbxflp5M3jSlWzzJ6subxoWI67Y3QPLY0i1Pi5YyocIAK9R5Q3GEw==
 
 acorn-jsx@^5.3.1:
   version "5.3.2"

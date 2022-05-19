@@ -1,25 +1,25 @@
 import type { NextPage } from 'next';
 import Img from 'next/image';
 import { Content } from 'components/Content/Content';
-import { Subscribe } from 'components/Subscribe/Subscribe';
 import { Banner } from 'components/Banner/Banner';
-import imgWanderer from 'assets/icons/worker.png';
-import imgLand from 'assets/icons/landscape.png';
-import imgResources from 'assets/icons/potion.png';
+import imgWorker from 'assets/images/worker.png';
+import imgLand from 'assets/images/land.png';
+import imgResources from 'assets/images/resources.png';
+import knightImg from 'assets/winzers/generated-nfts.gif';
 
 const HomePage: NextPage = () => {
   return (
     <Content
       className="h-full flex-1"
       contentClassName="flex-1 h-full pt-0"
-      headerClassName="pt-12 py-12 md:pt-24 md:py-24 bg-green-700"
-      header={<Banner />}
+      headerClassName="pt-12 py-12 md:pt-24 md:py-24 bg-[#FD7701]"
+      header={<Banner logo={knightImg} />}
     >
       <section className="py-12 md:py-24 bg-green-900 container-full text-white">
         <div className="mx-auto w-full max-w-lg text-center">
           <h2 className="mb-3">What is Winzeland?</h2>
           <p className="text-lg">
-            Winzeland combines roleplaying, afk game styles and blockchain to
+            Winzeland combines roleplaying, idle game styles and blockchain to
             create unique NFT powered game world on Polygon network. Characters,
             lands and all of Winzeland resources are NFTs that players will be
             able to gather and trade between friends.
@@ -41,8 +41,8 @@ const HomePage: NextPage = () => {
                 weapons and potions.
               </p>
             </div>
-            <div className="mt-3 w-56 h-56 relative">
-              <Img src={imgWanderer} layout="fill" />
+            <div className="mt-3 w-56 relative">
+              <Img src={imgWorker} layout="responsive" />
             </div>
           </div>
 
@@ -50,12 +50,16 @@ const HomePage: NextPage = () => {
             <div className="w-full md:flex-1">
               <h2 className="mb-3">Lands</h2>
               <p className="mb-1">
-                Winzeland is split to 10 000 pieces. Each land will offer
-                fortunes and hardships for it's owner.
+                Winzeland is split to{' '}
+                <em title="Still discussing what should be correct number.">
+                  10 000*
+                </em>{' '}
+                pieces . Each land will offer fortunes and hardships for it's
+                owner.
               </p>
             </div>
-            <div className="mt-3 w-56 h-56 relative">
-              <Img src={imgLand} layout="fill" />
+            <div className="mt-3 w-56 relative">
+              <Img src={imgLand} layout="responsive" />
             </div>
           </div>
 

@@ -7,6 +7,7 @@ const nextConfig = withTM({
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ['localhost', 'www.winzeland.com', 'testnet.winzeland.com'],
   },
   async rewrites() {
     return [
@@ -20,6 +21,9 @@ const nextConfig = withTM({
       { source: '/meta/contract/:id', destination: '/api/contract/metadata' },
       { source: '/meta/contract/:id.svg', destination: '/api/contract/image' },
     ];
+  },
+  async redirects() {
+    return [{ source: '/winzer', destination: '/', permanent: true }];
   },
   async header() {
     return [

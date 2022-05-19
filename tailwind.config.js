@@ -1,6 +1,10 @@
 module.exports = {
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
+    fontFamily: {
+      display: ['Stick', 'cursive'],
+      body: ['Stick', 'cursive'],
+    },
     container: {
       center: true,
       padding: '1rem',
