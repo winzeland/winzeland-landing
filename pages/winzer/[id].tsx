@@ -5,9 +5,7 @@ import type {
 } from 'next';
 import Img from 'next/image';
 import { Content } from 'components/Content/Content';
-import { Banner } from 'components/Banner/Banner';
 import openSeaIcon from 'assets/icons/opensea.svg';
-import { useRouter } from 'next/router';
 import Custom404 from 'pages/404';
 import { NavLink } from 'components/Header/NavLink';
 import { linkWinzerToOpenSea } from 'utils/helpers';
@@ -96,7 +94,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
 const WinzerDetailsPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ id, winzer, notFound }) => {
-  console.log({ winzer });
   if (notFound) {
     return <Custom404 />;
   }
