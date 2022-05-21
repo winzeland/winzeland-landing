@@ -13,14 +13,6 @@ import { fetchGraphQL } from 'utils/api/graphql';
 import { WinzerProps } from '@winzeland/winzer';
 import { buildOpenSeaMetadata } from 'utils/api/helpers';
 
-type Winzer = {
-  name: string;
-  description: string;
-  background_color: string;
-  external_url: string;
-  image: string;
-};
-
 export const getServerSideProps: GetServerSideProps = async context => {
   try {
     const id = (Number(context.query.id) || 0).toString(16);
@@ -77,7 +69,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
     return {
       props: {
-        id,
+        id: response.data.winzerToken.identifier,
         winzer,
         dna: props,
       },
