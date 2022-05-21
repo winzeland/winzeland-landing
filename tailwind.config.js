@@ -2,8 +2,8 @@ module.exports = {
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     fontFamily: {
-      display: ['Stick', 'cursive'],
-      body: ['Stick', 'cursive'],
+      display: ['"Poppins"', 'sans-serif'],
+      body: ['"Poppins"', 'sans-serif'],
     },
     container: {
       center: true,

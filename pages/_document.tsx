@@ -11,7 +11,7 @@ export default function Document() {
           crossOrigin="crossorigin"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Stick&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
           rel="stylesheet"
         />
         {process.env.NEXT_PUBLIC_GTAG_ID && (
