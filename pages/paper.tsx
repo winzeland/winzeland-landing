@@ -81,7 +81,7 @@ const HomePage: NextPage = () => {
           which building they are assigned and what kind of equipment they have.
         </p>
         <p>
-          It's planned to offer 10 000 winzers initially, however players will
+          It's planned to offer 100 000 winzers initially, however players will
           have a possibility to "marry" any two owned ones and receive third
           one.
         </p>
