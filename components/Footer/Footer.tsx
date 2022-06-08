@@ -1,3 +1,4 @@
+import { JoinWaitlist } from 'components/JoinWaitlist/JoinWaitlist';
 import { SocialLinks } from 'components/SocialLinks/SocialLinks';
 import { Subscribe } from 'components/Subscribe/Subscribe';
 import React from 'react';
@@ -5,7 +6,7 @@ import React from 'react';
 export const Footer: React.FC = () => {
   return (
     <div className="bg-green-900 pt-12">
-      <Subscribe />
+      <JoinWaitlist />
       <footer className="mt-12 pb-3 text-white">
         <div className="container flex flex-row justify-center items-center mb-4">
           <SocialLinks />
