@@ -11,7 +11,7 @@ import { useAnalytics } from 'hooks/useAnalytics';
 import { useIsMounted } from 'hooks/useIsMounted';
 import { addUserToWaitlist } from 'utils/helpers';
 
-export const JoinWaitlist: React.FC = () => {
+export const JoinWaitlistMini: React.FC = () => {
   const isMounted = useIsMounted();
   const { logEvent } = useAnalytics();
 
@@ -68,47 +68,36 @@ export const JoinWaitlist: React.FC = () => {
   );
 
   return (
-    <section className="w-full my-8">
-      <div className="w-full max-w-xl mx-auto p-10 bg-gray-200 rounded-lg">
-        <form onSubmit={handleSubmit}>
-          <h3 className="mb-5 text-md">
-            Join our waitlist for initial Winzer sale!
-          </h3>
-          <div className="flex flex-col space-y-2">
-            <label className="font-light">First name:</label>
+    <div className="w-full my-12">
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-row space-x-2 justify-center">
+          <div className="flex flex-col">
+            <label className="font-light mb-2">First name:</label>
             <input
               type="text"
               value={name}
               onChange={handleNameChange}
               placeholder="Jonh"
-              className="p-3 rounded-lg font-light"
+              className="p-3 rounded-lg font-light text-black"
               onBlur={() =>
                 logEvent('input_blur_name', { event_category: 'Waitlist' })
               }
             />
-            <label className="font-light mt-3">Email address:</label>
+          </div>
+          <div className="flex flex-col">
+            <label className="font-light mb-2">Email address:</label>
             <input
               type="email"
               value={email}
               onChange={handleEmailChange}
               placeholder="welcome@winzeland.com"
-              className="p-3 rounded-lg font-light"
+              className="p-3 rounded-lg font-light text-black"
               onBlur={() =>
                 logEvent('input_blur_email', { event_category: 'Waitlist' })
               }
             />
-            {loading && (
-              <div className="text-xs text-gray-500">Submitting...</div>
-            )}
-            {error && <div className="text-xs text-red-500">{error}</div>}
-            {success && (
-              <div className="text-xs text-green-500">
-                Submitted. Please check your inbox and confirm email to verify
-                subscription!
-              </div>
-            )}
           </div>
-          <div className="mt-5 flex flex-col items-center gap-4 md:flex-row-reverse md:justify-between">
+          <div className="flex flex-col justify-end flex-grow-0 flex-shrink-1">
             <button
               type="submit"
               disabled={loading || !email.length || !name.length}
@@ -122,8 +111,22 @@ export const JoinWaitlist: React.FC = () => {
               Join Waitlist
             </button>
           </div>
-        </form>
-      </div>
-    </section>
+        </div>
+        {loading && (
+          <div className="text-xs text-gray-500 text-center mt-3">
+            Submitting...
+          </div>
+        )}
+        {error && (
+          <div className="text-xs text-red-500 text-center mt-3">{error}</div>
+        )}
+        {success && (
+          <div className="text-xs text-green-500 text-center mt-3">
+            Submitted. Please check your inbox and confirm email to verify
+            subscription!
+          </div>
+        )}
+      </form>
+    </div>
   );
 };
