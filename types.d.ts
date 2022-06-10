@@ -19,6 +19,22 @@ declare interface GtagOptions {
 }
 
 declare function gtag(command: 'event', action: string, options: GtagOptions);
+
+declare function prefinery(
+  command: string,
+  data: Record<string, string>,
+  callback?: (...args: any) => void,
+);
+
+declare function prefinery(
+  command: string,
+  data: Record<string, string>,
+  callback?: (...args: any) => void,
+);
+
+declare function prefinery(command: string, callback?: (...args: any) => void);
+
 declare interface Window {
   gtag?: gtag;
+  prefinery?: prefinery;
 }

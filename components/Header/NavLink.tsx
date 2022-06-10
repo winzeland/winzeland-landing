@@ -18,12 +18,12 @@ export const NavLink: React.FC<NavLinkProps> = ({
   ...props
 }) => {
   const { logEvent } = useAnalytics();
-  const { asPath } = useRouter();
+  const { pathname } = useRouter();
 
   const isActive = useMemo(() => {
     const linkPathname = (props.as || props.href).toString();
-    return linkPathname === asPath;
-  }, [asPath, props.as, props.href]);
+    return linkPathname === pathname;
+  }, [pathname, props.as, props.href]);
 
   const rel = useMemo(() => {
     if (target === '_blank') {
