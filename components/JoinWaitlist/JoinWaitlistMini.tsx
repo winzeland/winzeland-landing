@@ -68,10 +68,10 @@ export const JoinWaitlistMini: React.FC = () => {
   );
 
   return (
-    <div className="w-full my-12">
+    <div className="w-4/5 my-12 mx-auto">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-row space-x-2 justify-center">
-          <div className="flex flex-col">
+          <div className="flex flex-col w-1/2">
             <label className="font-light mb-2">First name:</label>
             <input
               type="text"
@@ -84,7 +84,7 @@ export const JoinWaitlistMini: React.FC = () => {
               }
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-1/2">
             <label className="font-light mb-2">Email address:</label>
             <input
               type="email"
@@ -97,21 +97,21 @@ export const JoinWaitlistMini: React.FC = () => {
               }
             />
           </div>
-          <div className="flex flex-col justify-end flex-grow-0 flex-shrink-1">
+        </div>
+        <div className="flex flex-row space-x-2 justify-center">
             <button
               type="submit"
               disabled={loading || !email.length || !name.length}
               className={classNames(
-                'w-48 rounded-lg p-3 bg-green-900 cursor-pointer text-white duration-300 hover:bg-opacity-75',
+                'w-80 mt-4 rounded-lg p-3 bg-green-900 cursor-pointer text-white duration-300 hover:bg-opacity-75',
                 (!email.length || !name.length) &&
                   'cursor-not-allowed opacity-25',
                 loading && 'cursor-loading opacity-25',
               )}
             >
-              Join Waitlist
+              Join WaitList
             </button>
           </div>
-        </div>
         {loading && (
           <div className="text-xs text-gray-500 text-center mt-3">
             Submitting...
