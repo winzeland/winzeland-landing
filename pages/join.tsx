@@ -15,9 +15,21 @@ const JoinPage: NextPage = () => {
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Initial Winzer Sale",
-  "image": "${process.env.NEXT_PUBLIC_URL + imgWorker.src}", 
+  "description": "Be early adopter on Winzeland game by purchasing Winzers!",
+  "image": "${imgWorker.src}", 
   "startDate": "2022-08-08",
-  "endDate": "2022-08-10"
+  "endDate": "2022-08-10",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "${process.env.NEXT_PUBLIC_URL}"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Winzeland",
+    "url": "${process.env.NEXT_PUBLIC_URL}"
+  }
 }`}
       </Script>
       <Content
