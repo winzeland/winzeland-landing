@@ -2,16 +2,12 @@ import '../styles/index.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Layout } from 'components/Layout/Layout';
+import { MetaCard } from 'components/MetaCard/MetaCard';
 
 function WinzelandApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Head>
-        <title>Winzeland</title>
-        <meta
-          name="description"
-          content="Winzeland is an pixel art idle browser game designed to run fully on blockchain and NFTs!"
-        />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="icon"
@@ -32,6 +28,7 @@ function WinzelandApp({ Component, pageProps }: AppProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <MetaCard />
       <Component {...pageProps} />
     </Layout>
   );

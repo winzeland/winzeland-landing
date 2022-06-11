@@ -6,18 +6,16 @@ import imgLand from 'assets/images/land.png';
 import imgResources from 'assets/images/resources.png';
 import { JoinWaitlistMini } from 'components/JoinWaitlist/JoinWaitlistMini';
 import Script from 'next/script';
-import Head from 'next/head';
+import { MetaCard } from 'components/MetaCard/MetaCard';
 
 const JoinPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Join Winzeland Waitlist</title>
-        <meta
-          name="description"
-          content="Join the waitlist by submitting your email to be eligable for Winzer sale!"
-        />
-      </Head>
+      <MetaCard
+        title="Join Winzeland Waitlist"
+        description="Join the waitlist by submitting your email to be eligable for Winzer sale!"
+        url={`${process.env.NEXT_PUBLIC_URL}/paper`}
+      />
       <Script type="application/ld+json" id="event-structured-data">
         {`{
   "@context": "https://schema.org",

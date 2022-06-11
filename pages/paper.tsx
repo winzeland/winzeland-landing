@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { Content } from 'components/Content/Content';
 import { NavLink } from 'components/Header/NavLink';
 import { PropsWithChildren } from 'react';
-import Head from 'next/head';
+import { MetaCard } from 'components/MetaCard/MetaCard';
 
 type BlockProps = {
   title: React.ReactNode;
@@ -23,9 +23,10 @@ const Block: React.FC<PropsWithChildren<BlockProps>> = ({
 const HomePage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Winzeland Whitepaper</title>
-      </Head>
+      <MetaCard
+        title="Winzeland Whitepaper"
+        url={`${process.env.NEXT_PUBLIC_URL}/paper`}
+      />
       <Content
         className="h-full flex-1"
         contentClassName="flex-1 h-full pt-0"
