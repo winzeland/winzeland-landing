@@ -6,10 +6,18 @@ import imgLand from 'assets/images/land.png';
 import imgResources from 'assets/images/resources.png';
 import { JoinWaitlistMini } from 'components/JoinWaitlist/JoinWaitlistMini';
 import Script from 'next/script';
+import Head from 'next/head';
 
 const JoinPage: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Join Winzeland Waitlist</title>
+        <meta
+          name="description"
+          content="Join the waitlist by submitting your email to be eligable for Winzer sale!"
+        />
+      </Head>
       <Script type="application/ld+json" id="event-structured-data">
         {`{
   "@context": "https://schema.org",

@@ -10,7 +10,7 @@ function WinzelandApp({ Component, pageProps }: AppProps) {
         <title>Winzeland</title>
         <meta
           name="description"
-          content="NFT powered game about trying to survive in cursed lands."
+          content="Winzeland is an pixel art idle browser game designed to run fully on blockchain and NFTs!"
         />
         <link rel="icon" href="/favicon.ico" />
         <link
