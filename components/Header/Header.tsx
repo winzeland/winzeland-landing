@@ -1,10 +1,13 @@
-import { SocialLinks } from 'components/SocialLinks/SocialLinks';
 import { NavLink } from './NavLink';
 import OpenWindowIcon from 'assets/icons/open-in-window.svg';
 import Image from 'next/image';
 import Script from 'next/script';
+import { useEffect } from 'react';
 
 export const Header = () => {
+  useEffect(() => {
+    prefinery('recordFormImpression');
+  }, []);
   return (
     <>
       <Script
@@ -24,6 +27,9 @@ export const Header = () => {
             <ul className="flex space-x-2 mr-2">
               <li>
                 <NavLink href="/" title="Home" />
+              </li>
+              <li>
+                <NavLink href="/join" title="Join" />
               </li>
               <li>
                 <NavLink href="/paper" title="Paper" />

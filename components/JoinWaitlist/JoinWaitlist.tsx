@@ -1,11 +1,5 @@
 import classNames from 'classnames';
-import {
-  ChangeEvent,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 
 import { useAnalytics } from 'hooks/useAnalytics';
 import { useIsMounted } from 'hooks/useIsMounted';
@@ -32,10 +26,6 @@ export const JoinWaitlist: React.FC = () => {
       setEmail(event.currentTarget.value),
     [],
   );
-
-  useEffect(() => {
-    prefinery('recordFormImpression');
-  }, []);
 
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -75,12 +65,12 @@ export const JoinWaitlist: React.FC = () => {
             Join our waitlist for initial Winzer sale!
           </h3>
           <div className="flex flex-col space-y-2">
-            <label className="font-light">First name:</label>
+            <label className="font-light">Username:</label>
             <input
               type="text"
               value={name}
               onChange={handleNameChange}
-              placeholder="Jonh"
+              placeholder="ArmedWombat"
               className="p-3 rounded-lg font-light"
               onBlur={() =>
                 logEvent('input_blur_name', { event_category: 'Waitlist' })

@@ -1,11 +1,5 @@
 import classNames from 'classnames';
-import {
-  ChangeEvent,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 
 import { useAnalytics } from 'hooks/useAnalytics';
 import { useIsMounted } from 'hooks/useIsMounted';
@@ -32,10 +26,6 @@ export const JoinWaitlistMini: React.FC = () => {
       setEmail(event.currentTarget.value),
     [],
   );
-
-  useEffect(() => {
-    prefinery('recordFormImpression');
-  }, []);
 
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -70,21 +60,21 @@ export const JoinWaitlistMini: React.FC = () => {
   return (
     <div className="w-4/5 my-12 mx-auto">
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-row space-x-2 justify-center">
-          <div className="flex flex-col w-1/2">
-            <label className="font-light mb-2">First name:</label>
+        <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-2 justify-center">
+          <div className="flex flex-col">
+            <label className="font-light mb-2">Username:</label>
             <input
               type="text"
               value={name}
               onChange={handleNameChange}
-              placeholder="Jonh"
+              placeholder="ArmedWombat"
               className="p-3 rounded-lg font-light text-black"
               onBlur={() =>
                 logEvent('input_blur_name', { event_category: 'Waitlist' })
               }
             />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col">
             <label className="font-light mb-2">Email address:</label>
             <input
               type="email"
@@ -97,13 +87,12 @@ export const JoinWaitlistMini: React.FC = () => {
               }
             />
           </div>
-        </div>
-        <div className="flex flex-row space-x-2 justify-center">
+          <div className="flex flex-row justify-center md:flex-col md:justify-end">
             <button
               type="submit"
               disabled={loading || !email.length || !name.length}
               className={classNames(
-                'w-80 mt-4 rounded-lg p-3 bg-green-900 cursor-pointer text-white duration-300 hover:bg-opacity-75',
+                'w-80 md:w-auto mt-4 rounded-lg p-3 bg-green-900 cursor-pointer text-white duration-300 hover:bg-opacity-75',
                 (!email.length || !name.length) &&
                   'cursor-not-allowed opacity-25',
                 loading && 'cursor-loading opacity-25',
@@ -112,6 +101,7 @@ export const JoinWaitlistMini: React.FC = () => {
               Join WaitList
             </button>
           </div>
+        </div>
         {loading && (
           <div className="text-xs text-gray-500 text-center mt-3">
             Submitting...
