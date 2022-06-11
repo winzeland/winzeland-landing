@@ -18,17 +18,6 @@ const JoinPage: NextPage = () => {
   "image": "${process.env.URL + imgWorker.src}", 
   "startDate": "2022-08-08",
   "endDate": "2022-08-10",
-  "location": {
-    "@type": "Place",
-    "name": "",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "",
-      "postalCode": "",
-      "addressCountry": ""
-    }
-  }
 }`}
       </Script>
       <Content
