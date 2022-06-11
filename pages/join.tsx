@@ -15,9 +15,9 @@ const JoinPage: NextPage = () => {
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Initial Winzer Sale",
-  "image": "${process.env.URL + imgWorker.src}", 
+  "image": "${process.env.NEXT_PUBLIC_URL + imgWorker.src}", 
   "startDate": "2022-08-08",
-  "endDate": "2022-08-10",
+  "endDate": "2022-08-10"
 }`}
       </Script>
       <Content
