@@ -8,6 +8,8 @@ declare namespace NodeJS {
     readonly MAILCHIMP_LIST_ID: string;
     readonly GRAPH_URI: string;
     readonly URL: string;
+    readonly PREFINERY_API_KEY: string;
+    readonly PREFINERY_SECRET: string;
   }
 }
 
