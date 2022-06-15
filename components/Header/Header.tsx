@@ -11,6 +11,19 @@ export const Header = () => {
     prefinery('recordFormImpression');
   }, []);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 96);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = useCallback(() => setMenuOpen(value => !value), []);
 
@@ -27,10 +40,17 @@ export const Header = () => {
         src="https://widget.prefinery.com/widget/v2/eqqjqviw.js"
         defer
       />
-      <header className="w-full fixed top-0 z-50 pt-5 lg:pt-8">
+      <header
+        className={classNames(
+          'w-full fixed top-0 z-50 py-5 lg:py-8 bg-transparent md:bg-[#f0ab01] transition duration-300',
+          {
+            'md:bg-opacity-80 md:drop-shadow': scrolled,
+          },
+        )}
+      >
         <div className="container relative flex h-full items-center justify-end mx-auto">
           <div className="items-center flex">
-            <div>
+            <div className="relative">
               <div className="mb-3 flex justify-end md:hidden">
                 <button className={styles.link} onClick={toggleMenu}>
                   Menu
@@ -38,7 +58,7 @@ export const Header = () => {
               </div>
               <ul
                 className={classNames(
-                  'flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2 md:mr-2',
+                  'flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2 md:mr-2 absolute md:static right-0',
                   {
                     'hidden md:flex': !menuOpen,
                   },

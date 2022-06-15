@@ -41,22 +41,23 @@ const JoinPage: NextPage = () => {
       <Content
         className="h-full flex-1"
         contentClassName="flex-1 h-full pt-0"
+        headerClassName="bg-[#f0ab01] py-8 text-white"
         header={
-          <div className="container mb-8">
+          <div className="container">
             <h1>Join the Waitlist</h1>
             <p>Get in the priority queue for the Winzer sale on August 08th!</p>
           </div>
         }
       >
-        <section className="py-6 md:py-3 bg-[#FD7701] container-full text-white">
-          <div className="mx-auto w-full text-center">
+        <section className="pb-6 md:py-3 bg-[#f0ab01] container-full text-white">
+          <div className="container text-left flex justify-start pb-12">
             <JoinWaitlistMini />
           </div>
         </section>
 
         <section className="py-12 md:py-24 text-black px-6 lg:px-32">
           <div className="container">
-            <h2 className="mb-3">Why Join Waitlist?</h2>
+            <h3 className="mb-3">Why Join Waitlist?</h3>
             <p>
               Only members of the waitlist will be able to participate in the
               sale.
@@ -64,9 +65,9 @@ const JoinPage: NextPage = () => {
               The earlier member joined waitlist, the earlier they will receive
               their invite to the sale!
             </p>
-            <h2 className="mt-12 mb-3">
+            <h3 className="mt-12 mb-3">
               Can I climb up to in the priority list?
-            </h2>
+            </h3>
             <p className="mb-1">Yes! By spreading the word!</p>
             <p>
               After joining waitlist and confirming your email you will receive
@@ -77,7 +78,7 @@ const JoinPage: NextPage = () => {
               You will also receive access to the dashboard where you can track
               your position in the waitlist.
             </p>
-            <h2 className="mt-12 mb-3">Why Waitlist at all?</h2>
+            <h3 className="mt-12 mb-3">Why Waitlist at all?</h3>
             <p>
               We are planning on launching initial sale where 10% of Winzers
               will be sold to the early adopters.
@@ -85,7 +86,7 @@ const JoinPage: NextPage = () => {
               To make sure our oldest and most devoted to the project members
               would be able to get some of that 10%.
             </p>
-            <h2 className="mt-12 mb-3">How sale will work?</h2>
+            <h3 className="mt-12 mb-3">How sale will work?</h3>
             <p className="mb-1">
               1. Waitlist members will receive email asking them to link their
               wallet address to the email couple days before sale.

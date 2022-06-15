@@ -58,7 +58,7 @@ export const JoinWaitlistMini: React.FC = () => {
   );
 
   return (
-    <div className="w-4/5 my-12 mx-auto">
+    <>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-2 justify-center">
           <div className="flex flex-col">
@@ -94,7 +94,7 @@ export const JoinWaitlistMini: React.FC = () => {
               className={classNames(
                 'w-80 md:w-auto mt-4 rounded-lg p-3 bg-green-900 cursor-pointer text-white duration-300 hover:bg-opacity-75',
                 (!email.length || !name.length) &&
-                  'cursor-not-allowed opacity-25',
+                  'cursor-not-allowed opacity-50',
                 loading && 'cursor-loading opacity-25',
               )}
             >
@@ -117,6 +117,6 @@ export const JoinWaitlistMini: React.FC = () => {
           </div>
         )}
       </form>
-    </div>
+    </>
   );
 };

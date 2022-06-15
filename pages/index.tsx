@@ -5,15 +5,14 @@ import { Banner } from 'components/Banner/Banner';
 import imgWorker from 'assets/images/worker.png';
 import imgLand from 'assets/images/land.png';
 import imgResources from 'assets/images/resources.png';
-import knightImg from 'assets/winzers/generated-nfts.gif';
 
 const HomePage: NextPage = () => {
   return (
     <Content
       className="h-full flex-1"
       contentClassName="flex-1 h-full pt-0"
-      headerClassName="pt-12 py-12 md:pt-24 md:py-24 bg-[#FD7701]"
-      header={<Banner logo={knightImg} />}
+      headerClassName="pt-12 py-12 md:pt-24 md:py-24 bg-[#f0ab01]"
+      header={<Banner logo={imgWorker} />}
     >
       <section className="py-12 md:py-24 bg-green-900 container-full text-white">
         <div className="mx-auto w-full max-w-lg text-center">

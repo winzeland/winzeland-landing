@@ -1,6 +1,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NEXT_PUBLIC_GTAG_ID: string;
+    readonly NEXT_PUBLIC_REDDIT_PIXEL_ID: string;
     readonly NEXT_PUBLIC_URL: string;
     readonly NEXT_PUBLIC_NETWORK: string;
     readonly MAILCHIMP_API_KEY: string;
