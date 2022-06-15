@@ -15,14 +15,29 @@ export const useAnalytics = () => {
     [],
   );
 
+  const sendRdt = useCallback(
+    (action: string, options?: Record<string, string>) => {
+      if (
+        isClient() &&
+        process.env.NEXT_PUBLIC_REDDIT_PIXEL_ID &&
+        window.rdt !== undefined
+      ) {
+        window.rdt('track', action, options);
+      }
+    },
+    [],
+  );
+
   const logEvent = useCallback(
-    (action: string, options: GtagOptions) =>
-      sendGtag('event', action, options),
+    (action: string, options: GtagOptions) => {
+      sendGtag('event', action, options);
+    },
     [sendGtag],
   );
 
   return {
     logEvent,
     sendGtag,
+    sendRdt,
   };
 };

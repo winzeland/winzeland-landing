@@ -50,8 +50,10 @@ const JoinPage: NextPage = () => {
         }
       >
         <section className="pb-6 md:py-3 bg-[#f0ab01] container-full text-white">
-          <div className="container text-left flex justify-start pb-12">
-            <JoinWaitlistMini />
+          <div className="container text-left flex justify-center md:justify-start pb-12">
+            <div className="w-full md:w-auto">
+              <JoinWaitlistMini />
+            </div>
           </div>
         </section>
 

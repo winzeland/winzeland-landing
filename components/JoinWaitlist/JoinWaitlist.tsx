@@ -7,7 +7,7 @@ import { addUserToWaitlist } from 'utils/helpers';
 
 export const JoinWaitlist: React.FC = () => {
   const isMounted = useIsMounted();
-  const { logEvent } = useAnalytics();
+  const { logEvent, sendRdt } = useAnalytics();
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -37,6 +37,7 @@ export const JoinWaitlist: React.FC = () => {
       addUserToWaitlist(name, email)
         .then(() => {
           logEvent('success', { event_category: 'Waitlist' });
+          sendRdt('SignUp');
           if (isMounted()) {
             setEmail('');
             setError(undefined);

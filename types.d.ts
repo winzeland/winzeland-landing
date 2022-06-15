@@ -37,7 +37,14 @@ declare function prefinery(
 
 declare function prefinery(command: string, callback?: (...args: any) => void);
 
+declare function rdt(
+  command: 'track',
+  action: string,
+  data?: Record<string, string>,
+);
+
 declare interface Window {
   gtag?: gtag;
   prefinery?: prefinery;
+  rdt?: rdt;
 }

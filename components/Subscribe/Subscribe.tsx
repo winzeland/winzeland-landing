@@ -6,7 +6,7 @@ import { useIsMounted } from 'hooks/useIsMounted';
 
 export const Subscribe: React.FC = () => {
   const isMounted = useIsMounted();
-  const { logEvent } = useAnalytics();
+  const { logEvent, sendRdt } = useAnalytics();
 
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
@@ -40,6 +40,7 @@ export const Subscribe: React.FC = () => {
           if (isMounted()) {
             if (status) {
               logEvent('success', { event_category: 'Subscription' });
+              sendRdt('SignUp');
               setEmail('');
               setError(undefined);
               setSuccess(true);
